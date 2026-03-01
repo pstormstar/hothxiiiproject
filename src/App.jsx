@@ -3,7 +3,6 @@ import { DragDropContext } from '@hello-pangea/dnd';
 import { usePlannerStore } from './store/usePlannerStore';
 import CourseSidebar from './components/CourseSidebar';
 import PlannerGrid from './components/PlannerGrid';
-import { GraduationCap } from 'lucide-react';
 import './index.css';
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <div className="brand">
-          <GraduationCap className="brand-icon" size={32} />
           <h1>BruinPlan</h1>
         </div>
         <div className="header-actions">

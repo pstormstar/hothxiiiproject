@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import { usePlannerStore } from '../store/usePlannerStore';
-import { Search, ChevronDown, ChevronUp } from 'lucide-react';
+// simple text icons instead of lucide-react
+
 
 const SidebarCourseItem = ({ course, index }) => {
   const globalExpanded = usePlannerStore((state) => state.isAllExpanded);
@@ -28,7 +29,7 @@ const SidebarCourseItem = ({ course, index }) => {
                 onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
                 title="More info"
               >
-                {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                {isExpanded ? '▲' : '▼'}
               </button>
             </div>
           </div>
@@ -63,7 +64,7 @@ const CourseSidebar = () => {
         <h2>Course Catalog</h2>
       </div>
       <div className="search-container">
-        <Search className="search-icon" size={18} />
+        <span className="search-icon">🔍</span>
         <input 
           type="text" 
           placeholder="Search courses..." 
