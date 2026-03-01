@@ -2,8 +2,17 @@ import { create } from 'zustand';
 import { mockCourses } from '../data/mockCourses';
 import { supabase } from '../lib/supabaseClient';
 
+// planner dimensions
 const YEARS = 4;
 const QUARTERS = ['Fall', 'Winter', 'Spring', 'Summer'];
+
+// categories used when a major is selected; exported so components can access them
+export const engineeringCategories = [
+  'Core',
+  'Math & Science',
+  'Engineering Fundamentals',
+  'Computer Science',
+];
 
 // Initialize empty planner structure
 const initialPlanner = {};
@@ -17,6 +26,8 @@ export const usePlannerStore = create((set) => ({
   planner: initialPlanner,
   availableCourses: mockCourses,
   isAllExpanded: false,
+  isAllCategoriesExpanded: false, // for category accordions
+  selectedMajor: 'none',
   currentUser: null,
   isLoading: false,
   error: null,
@@ -67,6 +78,10 @@ export const usePlannerStore = create((set) => ({
   },
 
   toggleExpandAll: () => set((state) => ({ isAllExpanded: !state.isAllExpanded })),
+
+  toggleExpandAllCategories: () => set((state) => ({ isAllCategoriesExpanded: !state.isAllCategoriesExpanded })),
+
+  setMajor: (major) => set({ selectedMajor: major }),
 
   moveCourse: (sourceId, destinationId, sourceIndex, destIndex, courseId) => set((state) => {
     // Prevent duplicate in the same quarter

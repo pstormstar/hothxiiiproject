@@ -16,6 +16,8 @@ function App() {
   const loadUserPlan = usePlannerStore((state) => state.loadUserPlan);
   const logout = usePlannerStore((state) => state.logout);
 
+  const [showLogin, setShowLogin] = React.useState(false);
+
   // Check for existing session on mount
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -39,6 +41,12 @@ function App() {
 
     return () => subscription?.unsubscribe();
   }, [setCurrentUser, loadUserPlan]);
+
+  const handleLogin = (user) => {
+    setCurrentUser(user);
+    loadUserPlan(user.id);
+    setShowLogin(false);
+  };
 
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
@@ -74,9 +82,8 @@ function App() {
     );
   };
 
-  if (!currentUser) {
-    return <Login onLogin={(user) => { setCurrentUser(user); loadUserPlan(user.id); }} />;
-  }
+  // don't short‑circuit rendering; planner is always visible
+  // login screen will be shown in a modal when requested
 
   return (
     <div className="app-container">
@@ -93,12 +100,21 @@ function App() {
           >
             {isAllExpanded ? "Collapse All Cards" : "Expand All Cards"}
           </button>
-          <button 
-            className="header-btn btn-logout" 
-            onClick={logout}
-          >
-            Logout
-          </button>
+          {currentUser ? (
+            <button 
+              className="header-btn btn-logout" 
+              onClick={logout}
+            >
+              Logout
+            </button>
+          ) : (
+            <button
+              className="header-btn btn-login"
+              onClick={() => setShowLogin(true)}
+            >
+              Login
+            </button>
+          )}
         </div>
       </header>
       
@@ -108,6 +124,18 @@ function App() {
           <PlannerGrid />
         </DragDropContext>
       </main>
+
+      {/* login modal overlay */}
+      {showLogin && !currentUser && (
+        <div className="login-overlay">
+          <div className="login-modal">
+            <button className="close-modal-btn" onClick={() => setShowLogin(false)}>
+              ×
+            </button>
+            <Login onLogin={handleLogin} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
