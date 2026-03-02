@@ -124,9 +124,11 @@ function App() {
         <div className="brand">
           <img src="/bruinBear.svg" alt="Bruin Logo" className="brand-icon" style={{ width: '32px', height: '32px' }} />
           <h1>BruinPlan</h1>
-          <p className="user-email">{currentUser?.email}</p>
         </div>
         <div className="header-actions">
+          {currentUser && (
+            <span className="user-email-right">{currentUser.email}</span>
+          )}
           {currentUser ? (
             <button 
               className="header-btn btn-logout" 

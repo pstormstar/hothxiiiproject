@@ -127,7 +127,7 @@ const CourseSidebar = () => {
       </div>
 
       <div className="search-container">
-        <span className="search-icon"><Search size={18} color="var(--text-secondary)" /></span>
+        <span className="search-icon"><Search size={18} color="var(--text-secondary)" strokeWidth={2} /></span>
         <input 
           type="text" 
           placeholder="Search courses..." 

@@ -772,6 +772,14 @@ body {
   margin-top: 0.25rem;
 }
 
+.user-email-right {
+  margin-right: 1.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  align-self: center;
+}
+
 .btn-logout {
   background-color: var(--danger);
   color: white;
