@@ -81,37 +81,27 @@ function App() {
     };
   }, [resize, stopResizing]);
 
+  // Handles drag & drop across quarters and from the sidebar
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
-    // Dropped outside a valid droppable
-    if (!destination) {
-      return;
-    }
+    if (!destination) return; // Dropped outside valid area
 
-    // Dropped in the same place
     if (
       source.droppableId === destination.droppableId &&
       source.index === destination.index
     ) {
-      return;
+      return; // Dropped in same place
     }
 
-    const isFromSidebar =
-      source.droppableId === 'sidebar' ||
-      source.droppableId.startsWith('category-');
-
-    // Extract course ID, handling the potential '-index' suffix
-    const courseId = isFromSidebar
-      ? draggableId
-      : draggableId.substring(0, draggableId.lastIndexOf('-'));
-
+    // Since we removed 'category' groupings from CourseSidebar, 
+    // the draggableId is just the clean 'course.id'.
     moveCourse(
-      source.droppableId,
-      destination.droppableId,
-      source.index,
+      source.droppableId, 
+      destination.droppableId, 
+      source.index, 
       destination.index,
-      courseId
+      draggableId
     );
   };
 

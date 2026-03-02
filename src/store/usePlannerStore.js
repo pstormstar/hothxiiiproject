@@ -1,18 +1,40 @@
 import { create } from 'zustand';
-import { mockCourses } from '../data/mockCourses';
+import rawCourseGroups from '../../scraper_db.course_offerings.json';
 import { supabase } from '../lib/supabaseClient';
+
+// Process the raw scraped data into a flat active list
+const parsedCourses = [];
+const parsedDepartments = new Set();
+rawCourseGroups.forEach(group => {
+  group.table_data.forEach(course => {
+    // Collect unique departments
+    if (course.department) {
+      parsedDepartments.add(course.department);
+    }
+    
+    // Map availability bits to quarters
+    const offered = [];
+    if (course.availability_1 === 1) offered.push('Fall');
+    if (course.availability_2 === 1) offered.push('Winter');
+    if (course.availability_3 === 1) offered.push('Spring');
+
+    // Create uniform course object
+    parsedCourses.push({
+      id: `${course.course_prefix} ${course.class_code}`,
+      code: `${course.course_prefix} ${course.class_code}`,
+      title: course.class_name,
+      department: course.department,
+      units: 4, // default as it's not present in source data
+      offered: offered
+    });
+  });
+});
+
+export const availableDepartments = Array.from(parsedDepartments).sort();
 
 // planner dimensions
 const YEARS = 4;
 const QUARTERS = ['Fall', 'Winter', 'Spring', 'Summer'];
-
-// categories used when a major is selected; exported so components can access them
-export const engineeringCategories = [
-  'Core',
-  'Math & Science',
-  'Engineering Fundamentals',
-  'Computer Science',
-];
 
 // Initialize empty planner structure
 const initialPlanner = {};
@@ -24,10 +46,9 @@ for (let y = 1; y <= YEARS; y++) {
 
 export const usePlannerStore = create((set) => ({
   planner: initialPlanner,
-  availableCourses: mockCourses,
+  availableCourses: parsedCourses,
   isAllExpanded: false,
-  isAllCategoriesExpanded: false, // for category accordions
-  selectedMajor: 'none',
+  selectedDepartment: 'none',
   currentUser: null,
   isLoading: false,
   error: null,
@@ -80,9 +101,7 @@ export const usePlannerStore = create((set) => ({
 
   toggleExpandAll: () => set((state) => ({ isAllExpanded: !state.isAllExpanded })),
 
-  toggleExpandAllCategories: () => set((state) => ({ isAllCategoriesExpanded: !state.isAllCategoriesExpanded })),
-
-  setMajor: (major) => set({ selectedMajor: major }),
+  setDepartment: (dept) => set({ selectedDepartment: dept }),
 
   moveCourse: (sourceId, destinationId, sourceIndex, destIndex, courseId) => set((state) => {
     // Prevent duplicate in the same quarter
@@ -130,6 +149,24 @@ export const usePlannerStore = create((set) => ({
     const list = Array.from(newPlanner[quarterId]);
     list.splice(courseIndex, 1);
     newPlanner[quarterId] = list;
+    return { planner: newPlanner };
+  }),
+
+  addCourseToPlanner: (quarterId, courseId) => set((state) => {
+    // Prevent duplicate in the same quarter
+    const quarterList = state.planner[quarterId] || [];
+    if (quarterList.some(c => c.id === courseId)) {
+      alert("This course is already in this quarter.");
+      return state;
+    }
+
+    const courseToAdd = state.availableCourses.find(c => c.id === courseId);
+    if (!courseToAdd) return state;
+
+    const newPlanner = { ...state.planner };
+    const newList = [...(newPlanner[quarterId] || []), courseToAdd];
+    newPlanner[quarterId] = newList;
+    
     return { planner: newPlanner };
   })
 }));

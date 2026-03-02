@@ -952,8 +952,8 @@
     {
       "department": "Civil Engineering",
       "course_prefix": "C&EE",
-      "class_code": "",
-      "class_name": "109W Ethics in Civil and Environmental Engineering",
+      "class_code": "109W",
+      "class_name": "Ethics in Civil and Environmental Engineering",
       "availability_1": 0,
       "availability_2": 1,
       "availability_3": 0
@@ -997,8 +997,8 @@
     {
       "department": "Civil Engineering",
       "course_prefix": "C&EE",
-      "class_code": "",
-      "class_name": "116XP Engineering & Environmental Justice",
+      "class_code": "116XP",
+      "class_name": "Engineering & Environmental Justice",
       "availability_1": 0,
       "availability_2": 0,
       "availability_3": 1
@@ -1410,15 +1410,6 @@
     "$date": "2026-03-02T00:52:00.645Z"
   },
   "table_data": [
-    {
-      "department": "Computer Science",
-      "course_prefix": "CS",
-      "class_code": "",
-      "class_name": "Color code:",
-      "availability_1": 1,
-      "availability_2": 1,
-      "availability_3": 1
-    },
     {
       "department": "Computer Science",
       "course_prefix": "CS",

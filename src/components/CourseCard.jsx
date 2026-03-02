@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Draggable } from '@hello-pangea/dnd';
-// placeholder arrows instead of lucide-react icons
+import { ChevronDown } from 'lucide-react';
 
 import { usePlannerStore } from '../store/usePlannerStore';
 
@@ -26,11 +26,11 @@ const CourseCard = ({ course, index, isRemovable, onRemove }) => {
             <strong>{course.code}</strong>
             <div className="course-card-actions">
               <button 
-                className="expand-btn" 
+                className={`expand-btn ${isExpanded ? 'expanded' : ''}`} 
                 onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
                 title="More info"
               >
-                {isExpanded ? '▲' : '▼'}
+                <ChevronDown size={18} />
               </button>
               {isRemovable && (
                 <button 
@@ -55,7 +55,7 @@ const CourseCard = ({ course, index, isRemovable, onRemove }) => {
                       <span key={q} className={`offered-pill offered-${q.toLowerCase()}`}>{q}</span>
                     ))}
                   </div>
-                ) : 'Unknown'}
+                ) : <span style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>Not offered this year</span>}
               </div>
             </div>
           )}

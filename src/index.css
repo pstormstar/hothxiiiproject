@@ -595,6 +595,111 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
+/* Quick Search UI in Quarter Columns */
+.quick-add-btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ucla-blue);
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(39, 116, 174, 0.05); /* very light blue */
+  transition: all 0.2s ease;
+  border: 1px dashed transparent;
+}
+
+.quick-add-btn:hover {
+  background-color: rgba(39, 116, 174, 0.1);
+  border-color: var(--ucla-blue);
+}
+
+.quick-search-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  z-index: 100;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.quick-search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-primary);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.quick-search-icon {
+  color: var(--text-secondary);
+  margin-right: 0.4rem;
+}
+
+.quick-search-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.85rem;
+  outline: none;
+  color: var(--text-primary);
+}
+
+.quick-search-close {
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-left: 0.4rem;
+}
+
+.quick-search-close:hover {
+  color: var(--error-color);
+}
+
+.quick-search-results {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.quick-search-item {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.quick-search-item:hover {
+  background-color: rgba(39, 116, 174, 0.1); /* light blue hover */
+}
+
+.quick-search-item-title {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.quick-search-item.empty {
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  pointer-events: none;
+}
+
 /* Login Styles */
 .login-container {
   display: flex;
