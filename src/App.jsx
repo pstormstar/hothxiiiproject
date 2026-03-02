@@ -18,6 +18,7 @@ function App() {
   const logout = usePlannerStore((state) => state.logout);
 
   const [showLogin, setShowLogin] = React.useState(false);
+  const [mobileTab, setMobileTab] = React.useState('plan'); // 'catalog' | 'plan'
 
   // Check for existing session on mount
   useEffect(() => {
@@ -143,15 +144,30 @@ function App() {
       
       <main className="main-content">
         <DragDropContext onDragEnd={onDragEnd}>
-          <div style={{ width: `${sidebarWidth}px`, flexShrink: 0, height: '100%', display: 'flex', flexDirection: 'column' }}>
+          {/* Mobile tab bar */}
+          <div className="mobile-tab-bar">
+            <button
+              className={`mobile-tab-btn ${mobileTab === 'catalog' ? 'active' : ''}`}
+              onClick={() => setMobileTab('catalog')}
+            >📚 Catalog</button>
+            <button
+              className={`mobile-tab-btn ${mobileTab === 'plan' ? 'active' : ''}`}
+              onClick={() => setMobileTab('plan')}
+            >🗓 Plan</button>
+          </div>
+
+          <div className={`sidebar-wrapper ${mobileTab === 'catalog' ? 'mobile-visible' : 'mobile-hidden'}`}
+            style={{ width: `${sidebarWidth}px`, flexShrink: 0, height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CourseSidebar />
           </div>
-          <div className="resizer" onMouseDown={startResizing}>
+          <div className="resizer desktop-only" onMouseDown={startResizing}>
             <div className="resizer-dot" />
             <div className="resizer-dot" />
             <div className="resizer-dot" />
           </div>
-          <PlannerGrid />
+          <div className={`planner-wrapper ${mobileTab === 'plan' ? 'mobile-visible' : 'mobile-hidden'}`}>
+            <PlannerGrid />
+          </div>
         </DragDropContext>
       </main>
 

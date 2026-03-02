@@ -1037,3 +1037,161 @@ body {
 .btn-logout:hover {
   background-color: #dc2626;
 }
+
+/* =============================================
+   MOBILE TAB BAR (hidden on desktop)
+   ============================================= */
+.mobile-tab-bar {
+  display: none;
+}
+
+/* Desktop: hide mobile classes, show everything */
+.sidebar-wrapper { display: flex; flex-direction: column; }
+.planner-wrapper { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+/* =============================================
+   RESPONSIVE — Mobile (≤ 768px)
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Compact header */
+  .app-header {
+    padding: 0.6rem 1rem;
+  }
+
+  .brand h1 {
+    font-size: 1.1rem;
+  }
+
+  .user-email-right {
+    display: none; /* hide email on mobile to save space */
+  }
+
+  .header-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  /* Stack main content vertically */
+  .main-content {
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Mobile tab bar */
+  .mobile-tab-bar {
+    display: flex;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-bottom: 2px solid var(--border-color);
+    z-index: 5;
+  }
+
+  .mobile-tab-btn {
+    flex: 1;
+    padding: 0.7rem;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+  }
+
+  .mobile-tab-btn.active {
+    color: var(--ucla-blue);
+    border-bottom-color: var(--ucla-blue);
+    background: #f0f6ff;
+  }
+
+  /* Sidebar takes full width on mobile */
+  .sidebar-wrapper {
+    width: 100% !important;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  .planner-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Show/hide based on active tab */
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-visible {
+    display: flex !important;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* Hide desktop-only vertical resizer */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Planner grid: horizontal scroll within each year row */
+  .planner-grid {
+    padding: 1rem;
+    gap: 1rem;
+    overflow-x: hidden;
+  }
+
+  .quarters-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+  }
+
+  .quarter-column {
+    min-width: 240px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    min-height: 200px;
+  }
+
+  /* Sidebar: hide horizontal resizer on mobile */
+  .horizontal-resizer {
+    display: none;
+  }
+
+  /* Sidebar top section takes full height on mobile */
+  .sidebar-top-section {
+    height: auto !important;
+    max-height: 45vh;
+  }
+
+  /* Course cards slightly more compact */
+  .sidebar-course-card {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Year label */
+  .year-label-container {
+    padding: 0.5rem 1rem;
+  }
+
+  /* Login modal full-screen on mobile */
+  .login-overlay {
+    align-items: flex-end;
+  }
+
+  .login-modal {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
