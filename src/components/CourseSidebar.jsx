@@ -4,7 +4,7 @@ import { usePlannerStore, engineeringCategories } from '../store/usePlannerStore
 import { Search, ChevronDown, ChevronUp, Plus, Minus, Book } from 'lucide-react';
 import CategoryAccordion from './CategoryAccordion';
 
-const SidebarCourseItem = ({ course, index }) => {
+const SidebarCourseItem = ({ course, index, categoryName }) => {
   const globalExpanded = usePlannerStore((state) => state.isAllExpanded);
   const planner = usePlannerStore((state) => state.planner);
   const [isExpanded, setIsExpanded] = React.useState(globalExpanded);
@@ -18,8 +18,12 @@ const SidebarCourseItem = ({ course, index }) => {
     setIsExpanded(globalExpanded);
   }, [globalExpanded]);
   
+  // App.jsx extracts courseId via draggableId.substring(0, draggableId.lastIndexOf('-'))
+  // for categories, so we need to add a suffix if it's in a category
+  const draggableId = categoryName ? `${course.id}-${categoryName}` : course.id;
+
   return (
-    <Draggable draggableId={course.id} index={index} isDragDisabled={isPlanned}>
+    <Draggable draggableId={draggableId} index={index} isDragDisabled={isPlanned}>
       {(dragProvided, dragSnapshot) => (
         <div
           ref={dragProvided.innerRef}
@@ -31,11 +35,11 @@ const SidebarCourseItem = ({ course, index }) => {
             <strong>{course.code}</strong>
             <div className="course-card-actions">
               <button 
-                className="expand-btn" 
+                className={`expand-btn ${isExpanded ? 'expanded' : ''}`} 
                 onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
                 title="More info"
               >
-                {isExpanded ? '▲' : '▼'}
+                <ChevronDown size={18} />
               </button>
             </div>
           </div>
@@ -45,7 +49,13 @@ const SidebarCourseItem = ({ course, index }) => {
             <div className="course-card-expanded">
               <div className="course-card-title">{course.title}</div>
               <div className="course-card-offered">
-                <strong>Offered:</strong> {course.offered ? course.offered.join(', ') : 'Unknown'}
+                <strong>Offered:</strong> {course.offered && course.offered.length > 0 ? (
+                  <div className="offered-pills">
+                    {course.offered.map(q => (
+                      <span key={q} className={`offered-pill offered-${q.toLowerCase()}`}>{q}</span>
+                    ))}
+                  </div>
+                ) : 'Unknown'}
               </div>
             </div>
           )}
@@ -117,7 +127,7 @@ const CourseSidebar = () => {
       </div>
 
       <div className="search-container">
-        <span className="search-icon">🔍</span>
+        <span className="search-icon"><Search size={18} color="var(--text-secondary)" strokeWidth={2} /></span>
         <input 
           type="text" 
           placeholder="Search courses..." 

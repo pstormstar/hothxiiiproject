@@ -48,6 +48,39 @@ function App() {
     setShowLogin(false);
   };
 
+  // Resizable sidebar state
+  const [sidebarWidth, setSidebarWidth] = React.useState(320);
+  const [isResizing, setIsResizing] = React.useState(false);
+  const sidebarRef = React.useRef(null);
+
+  const startResizing = React.useCallback(() => {
+    setIsResizing(true);
+  }, []);
+
+  const stopResizing = React.useCallback(() => {
+    setIsResizing(false);
+  }, []);
+
+  const resize = React.useCallback(
+    (mouseMoveEvent) => {
+      if (isResizing) {
+        // limit minimum and maximum width
+        const newWidth = Math.max(250, Math.min(600, mouseMoveEvent.clientX));
+        setSidebarWidth(newWidth);
+      }
+    },
+    [isResizing]
+  );
+
+  useEffect(() => {
+    window.addEventListener("mousemove", resize);
+    window.addEventListener("mouseup", stopResizing);
+    return () => {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("mouseup", stopResizing);
+    };
+  }, [resize, stopResizing]);
+
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
@@ -91,9 +124,11 @@ function App() {
         <div className="brand">
           <img src="/bruinBear.svg" alt="Bruin Logo" className="brand-icon" style={{ width: '32px', height: '32px' }} />
           <h1>BruinPlan</h1>
-          <p className="user-email">{currentUser?.email}</p>
         </div>
         <div className="header-actions">
+          {currentUser && (
+            <span className="user-email-right">{currentUser.email}</span>
+          )}
           {currentUser ? (
             <button 
               className="header-btn btn-logout" 
@@ -114,7 +149,14 @@ function App() {
       
       <main className="main-content">
         <DragDropContext onDragEnd={onDragEnd}>
-          <CourseSidebar />
+          <div style={{ width: `${sidebarWidth}px`, flexShrink: 0, height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <CourseSidebar />
+          </div>
+          <div className="resizer" onMouseDown={startResizing}>
+            <div className="resizer-dot" />
+            <div className="resizer-dot" />
+            <div className="resizer-dot" />
+          </div>
           <PlannerGrid />
         </DragDropContext>
       </main>

@@ -49,7 +49,13 @@ const CourseCard = ({ course, index, isRemovable, onRemove }) => {
             <div className="course-card-expanded">
               <div className="course-card-title">{course.title}</div>
               <div className="course-card-offered">
-                <strong>Offered:</strong> {course.offered ? course.offered.join(', ') : 'Unknown'}
+                <strong>Offered:</strong> {course.offered && course.offered.length > 0 ? (
+                  <div className="offered-pills">
+                    {course.offered.map(q => (
+                      <span key={q} className={`offered-pill offered-${q.toLowerCase()}`}>{q}</span>
+                    ))}
+                  </div>
+                ) : 'Unknown'}
               </div>
             </div>
           )}
