@@ -48,6 +48,39 @@ function App() {
     setShowLogin(false);
   };
 
+  // Resizable sidebar state
+  const [sidebarWidth, setSidebarWidth] = React.useState(320);
+  const [isResizing, setIsResizing] = React.useState(false);
+  const sidebarRef = React.useRef(null);
+
+  const startResizing = React.useCallback(() => {
+    setIsResizing(true);
+  }, []);
+
+  const stopResizing = React.useCallback(() => {
+    setIsResizing(false);
+  }, []);
+
+  const resize = React.useCallback(
+    (mouseMoveEvent) => {
+      if (isResizing) {
+        // limit minimum and maximum width
+        const newWidth = Math.max(250, Math.min(600, mouseMoveEvent.clientX));
+        setSidebarWidth(newWidth);
+      }
+    },
+    [isResizing]
+  );
+
+  useEffect(() => {
+    window.addEventListener("mousemove", resize);
+    window.addEventListener("mouseup", stopResizing);
+    return () => {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("mouseup", stopResizing);
+    };
+  }, [resize, stopResizing]);
+
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
@@ -114,7 +147,14 @@ function App() {
       
       <main className="main-content">
         <DragDropContext onDragEnd={onDragEnd}>
-          <CourseSidebar />
+          <div style={{ width: `${sidebarWidth}px`, flexShrink: 0, height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <CourseSidebar />
+          </div>
+          <div className="resizer" onMouseDown={startResizing}>
+            <div className="resizer-dot" />
+            <div className="resizer-dot" />
+            <div className="resizer-dot" />
+          </div>
           <PlannerGrid />
         </DragDropContext>
       </main>

@@ -17,8 +17,8 @@ const CategoryAccordion = ({ categoryName, courses, renderItem }) => {
         className="category-header" 
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="category-icon">
-          {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+        <span className={`category-icon ${isOpen ? 'open' : ''}`}>
+          <ChevronRight size={18} />
         </span>
         <h3 className="category-title">{categoryName}</h3>
         <span className="category-count">{courses.length} courses</span>
@@ -50,7 +50,7 @@ const CategoryAccordion = ({ categoryName, courses, renderItem }) => {
               className="category-content"
             >
               {courses.length > 0 ? (
-                courses.map((course, index) => renderItem(course, index))
+                courses.map((course, index) => renderItem(course, index, categoryName))
               ) : (
                 <div className="empty-category-msg">No courses available</div>
               )}

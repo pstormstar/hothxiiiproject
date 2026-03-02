@@ -138,9 +138,7 @@ body {
 }
 
 .text-action-btn:hover {
-  background-color: var(--ucla-blue-light);
-  color: white;
-  opacity: 0.8;
+  color: var(--ucla-blue-dark);
 }
 
 .text-action-btn:active {
@@ -181,6 +179,8 @@ body {
   font-weight: 600;
   color: var(--text-primary);
   flex-grow: 1;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .category-count {
@@ -190,13 +190,24 @@ body {
   padding: 0.15rem 0.5rem;
   border-radius: 12px;
   font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .category-icon {
-  color: var(--ucla-blue);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.category-icon.open svg {
+  transform: rotate(90deg);
 }
 
 .category-content {
@@ -222,18 +233,50 @@ body {
 
 .main-content {
   display: flex;
+  flex-direction: row;
   flex: 1;
   overflow: hidden;
 }
 
-/* Sidebar */
+/* Sidebar & Resizer */
 .sidebar {
-  width: 320px;
+  /* width is now dynamic via style prop, min/max managed by state */
   background-color: var(--surface);
-  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.resizer {
+  width: 5px;
+  background-color: var(--border-color);
+  cursor: col-resize;
+  height: 100%;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.resizer-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  opacity: 0.5;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.resizer:hover, .resizer:active {
+  background-color: var(--ucla-blue-light);
+}
+
+.resizer:hover .resizer-dot, .resizer:active .resizer-dot {
+  background-color: white;
+  opacity: 1;
 }
 
 .sidebar-header {
@@ -330,6 +373,20 @@ body {
   flex-direction: column;
   min-height: 250px;
   height: 100%;
+}
+
+/* Seasonal Highlights */
+.quarter-fall .quarter-header {
+  border-top: 3px solid #f97316; /* Tailwind orange-500 */
+}
+.quarter-winter .quarter-header {
+  border-top: 3px solid #0ea5e9; /* Tailwind sky-500 */
+}
+.quarter-spring .quarter-header {
+  border-top: 3px solid #22c55e; /* Tailwind green-500 */
+}
+.quarter-summer .quarter-header {
+  border-top: 3px solid #eab308; /* Tailwind yellow-500 */
 }
 
 .quarter-header {
@@ -449,9 +506,15 @@ body {
 }
 
 .expand-btn:hover {
-  color: var(--ucla-blue);
-  background-color: var(--ucla-blue-light);
-  opacity: 0.5;
+  color: var(--text-primary);
+}
+
+.expand-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.expand-btn.expanded svg {
+  transform: rotate(180deg);
 }
 
 .remove-course-btn {
@@ -486,6 +549,36 @@ body {
 .course-card-offered {
   font-size: 0.75rem;
   color: var(--ucla-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.offered-pills {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.offered-pill {
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+}
+
+.offered-fall {
+  background-color: #f97316; /* Tailwind orange-500 */
+}
+.offered-winter {
+  background-color: #0ea5e9; /* Tailwind sky-500 */
+}
+.offered-spring {
+  background-color: #22c55e; /* Tailwind green-500 */
+}
+.offered-summer {
+  background-color: #eab308; /* Tailwind yellow-500 */
 }
 
 .course-card-units {
@@ -559,8 +652,8 @@ body {
 
 /* header login button variant */
 .header-btn.btn-login {
-  background: var(--ucla-blue);
-  color: white;
+  background: var(--ucla-gold);
+  color: var(--ucla-blue-dark);
 }
 
 .login-subtitle {

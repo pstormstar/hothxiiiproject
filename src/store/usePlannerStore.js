@@ -97,20 +97,23 @@ export const usePlannerStore = create((set) => ({
     const newAvailable = [...state.availableCourses];
 
     let movedCourse;
+    
+    const isSourceSidebar = sourceId === 'sidebar' || sourceId.startsWith('category-');
+    const isDestSidebar = destinationId === 'sidebar' || destinationId.startsWith('category-');
 
     // Remove from source list
-    if (sourceId === 'sidebar') {
+    if (isSourceSidebar) {
       // Find course in availableCourses
       movedCourse = newAvailable.find(c => c.id === courseId);
     } else {
-      const sourceList = Array.from(newPlanner[sourceId]);
+      const sourceList = Array.from(newPlanner[sourceId] || []);
       movedCourse = sourceList[sourceIndex];
       sourceList.splice(sourceIndex, 1);
       newPlanner[sourceId] = sourceList;
     }
 
     // Add to destination list
-    if (destinationId === 'sidebar') {
+    if (isDestSidebar) {
       // For now, if dragged to sidebar, just don't add back to array unless we want it fully removed from planner
       // We don't remove from sidebar when adding to planner, so availableCourses remains full list.
     } else {

@@ -7,8 +7,11 @@ const QuarterColumn = ({ title, quarterId, courses }) => {
   const removeCourse = usePlannerStore((state) => state.removeCourseFromPlanner);
   const totalUnits = courses.reduce((sum, course) => sum + course.units, 0);
 
+  // CSS class helper for seasonal coloring
+  const seasonClass = `quarter-${title.toLowerCase()}`;
+
   return (
-    <div className="quarter-column">
+    <div className={`quarter-column ${seasonClass}`}>
       <div className="quarter-header">
         <h3>{title}</h3>
         <span className="unit-count">{totalUnits} Units</span>
