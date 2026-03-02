@@ -1,10 +1,10 @@
 [{
   "_id": {
-    "$oid": "69a4df2707097747bd9ebb84"
+    "$oid": "69a4e627e15ae2581a543f35"
   },
   "source_url": "https://www.seasoasa.ucla.edu/engr-courses/",
   "scraped_at": {
-    "$date": "2026-03-02T00:51:51.618Z"
+    "$date": "2026-03-02T01:21:43.256Z"
   },
   "table_data": [
     {
@@ -190,15 +190,6 @@
     {
       "department": "Engineering",
       "course_prefix": "ENGR",
-      "class_code": "112",
-      "class_name": "Laboratory to Market, Entrepreneurship for Engineers (NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Engineering",
-      "course_prefix": "ENGR",
       "class_code": "180",
       "class_name": "Engineering of Complex Systems",
       "availability_1": 0,
@@ -249,25 +240,16 @@
       "availability_1": 0,
       "availability_2": 1,
       "availability_3": 1
-    },
-    {
-      "department": "Engineering",
-      "course_prefix": "ENGR",
-      "class_code": "188EW",
-      "class_name": "Experimental Courses in Engineering Ethics (NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
     }
   ]
 },
 {
   "_id": {
-    "$oid": "69a4df2907097747bd9ebb85"
+    "$oid": "69a4e629e15ae2581a543f36"
   },
   "source_url": "https://www.seasoasa.ucla.edu/be-term-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:51:53.673Z"
+    "$date": "2026-03-02T01:21:45.300Z"
   },
   "table_data": [
     {
@@ -300,15 +282,6 @@
     {
       "department": "Bioengineering",
       "course_prefix": "BIOENGR",
-      "class_code": "C102",
-      "class_name": "Human Physiological Systems for Bioengineering I",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Bioengineering",
-      "course_prefix": "BIOENGR",
       "class_code": "C104",
       "class_name": "Physical Chemistry of Biomacromolecules",
       "availability_1": 1,
@@ -321,15 +294,6 @@
       "class_code": "C105",
       "class_name": "Engineering of Bioconjugates",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Bioengineering",
-      "course_prefix": "BIOENGR",
-      "class_code": "C106",
-      "class_name": "Topics in Bioelectricity for Engineers",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     },
@@ -381,15 +345,6 @@
     {
       "department": "Bioengineering",
       "course_prefix": "BIOENGR",
-      "class_code": "C131",
-      "class_name": "Nanopore Sensing",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Bioengineering",
-      "course_prefix": "BIOENGR",
       "class_code": "132",
       "class_name": "Nanogenerators for Bioengineering",
       "availability_1": 0,
@@ -417,15 +372,6 @@
     {
       "department": "Bioengineering",
       "course_prefix": "BIOENGR",
-      "class_code": "C139B",
-      "class_name": "Biomolecular Materials Science II",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Bioengineering",
-      "course_prefix": "BIOENGR",
       "class_code": "CM140",
       "class_name": "Introduction to Biomechanics",
       "availability_1": 0,
@@ -438,15 +384,6 @@
       "class_code": "CM145",
       "class_name": "Molecular Biotechnology for Engineers",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Bioengineering",
-      "course_prefix": "BIOENGR",
-      "class_code": "C147",
-      "class_name": "Applied Tissue Engineering: Clinical and Industrial Perspective",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     },
@@ -543,15 +480,6 @@
     {
       "department": "Bioengineering",
       "course_prefix": "BIOENGR",
-      "class_code": "180L",
-      "class_name": "System Integration in Biology, Engineering, and Medicine I Laboratory",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Bioengineering",
-      "course_prefix": "BIOENGR",
       "class_code": "M182",
       "class_name": "Systems Biomodeling and Simulation Basics",
       "availability_1": 0,
@@ -598,11 +526,11 @@
 },
 {
   "_id": {
-    "$oid": "69a4df2b07097747bd9ebb86"
+    "$oid": "69a4e62ce15ae2581a543f37"
   },
   "source_url": "https://www.seasoasa.ucla.edu/course-term-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:51:55.693Z"
+    "$date": "2026-03-02T01:21:48.079Z"
   },
   "table_data": [
     {
@@ -806,15 +734,6 @@
     {
       "department": "Chemical Engineering",
       "course_prefix": "CH ENGR",
-      "class_code": "C118",
-      "class_name": "Multimedia Environmental Assessment",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Chemical Engineering",
-      "course_prefix": "CH ENGR",
       "class_code": "C124",
       "class_name": "Cell Material Interactions",
       "availability_1": 0,
@@ -870,11 +789,11 @@
 },
 {
   "_id": {
-    "$oid": "69a4df2d07097747bd9ebb87"
+    "$oid": "69a4e62ee15ae2581a543f38"
   },
   "source_url": "https://www.seasoasa.ucla.edu/civil-term-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:51:57.770Z"
+    "$date": "2026-03-02T01:21:50.373Z"
   },
   "table_data": [
     {
@@ -892,8 +811,8 @@
       "class_code": "M20",
       "class_name": "Introduction to Computer Programming with MATLAB (cross-listed with MECH&AE M20)",
       "availability_1": 1,
-      "availability_2": 1,
-      "availability_3": 1
+      "availability_2": 0,
+      "availability_3": 0
     },
     {
       "department": "Civil Engineering",
@@ -901,15 +820,6 @@
       "class_code": "91",
       "class_name": "Statics",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
-      "class_code": "102",
-      "class_name": "Dynamics of Particles an",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     },
@@ -929,15 +839,6 @@
       "class_name": "Structure, Processing, and Properties of Civil Engineering Materials",
       "availability_1": 0,
       "availability_2": 1,
-      "availability_3": 0
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
-      "class_code": "C106",
-      "class_name": "Modeling and Simulation of Civil Engineering Materials",
-      "availability_1": 0,
-      "availability_2": 0,
       "availability_3": 0
     },
     {
@@ -1051,15 +952,6 @@
     {
       "department": "Civil Engineering",
       "course_prefix": "C&EE",
-      "class_code": "C128",
-      "class_name": "Geohazards and Infrastructure Resilience",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
       "class_code": "129L",
       "class_name": "Engineering Geomatics",
       "availability_1": 0,
@@ -1119,24 +1011,6 @@
       "availability_1": 0,
       "availability_2": 0,
       "availability_3": 1
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
-      "class_code": "C137",
-      "class_name": "Elementary Structural Dynamics",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
-      "class_code": "140L",
-      "class_name": "Structural Components and Systems Testing Laboratory",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
     },
     {
       "department": "Civil Engineering",
@@ -1348,15 +1222,6 @@
     {
       "department": "Civil Engineering",
       "course_prefix": "C&EE",
-      "class_code": "C182",
-      "class_name": "Rigid and Flexible Pavements: Design, Materials, and Serviceability",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
       "class_code": "",
       "class_name": "C183 Transportation Sustainability",
       "availability_1": 1,
@@ -1384,15 +1249,6 @@
     {
       "department": "Civil Engineering",
       "course_prefix": "C&EE",
-      "class_code": "188",
-      "class_name": "Special Courses in Civil and Environmental Engineering",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Civil Engineering",
-      "course_prefix": "C&EE",
       "class_code": "190",
       "class_name": "Professional Practice",
       "availability_1": 1,
@@ -1403,22 +1259,13 @@
 },
 {
   "_id": {
-    "$oid": "69a4df3007097747bd9ebb88"
+    "$oid": "69a4e631e15ae2581a543f39"
   },
   "source_url": "https://www.seasoasa.ucla.edu/cs-tentative-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:52:00.645Z"
+    "$date": "2026-03-02T01:21:53.267Z"
   },
   "table_data": [
-    {
-      "department": "Computer Science",
-      "course_prefix": "CS",
-      "class_code": "",
-      "class_name": "Color code:",
-      "availability_1": 1,
-      "availability_2": 1,
-      "availability_3": 1
-    },
     {
       "department": "Computer Science",
       "course_prefix": "CS",
@@ -1499,15 +1346,6 @@
       "availability_1": 1,
       "availability_2": 1,
       "availability_3": 1
-    },
-    {
-      "department": "Computer Science",
-      "course_prefix": "CS",
-      "class_code": "M119",
-      "class_name": "Fundamentals of Embedded Network SystemsCheck both CS M119ANDECE M119",
-      "availability_1": 0,
-      "availability_2": 1,
-      "availability_3": 0
     },
     {
       "department": "Computer Science",
@@ -1598,15 +1436,6 @@
       "availability_1": 0,
       "availability_2": 0,
       "availability_3": 1
-    },
-    {
-      "department": "Computer Science",
-      "course_prefix": "CS",
-      "class_code": "144",
-      "class_name": "Web Applications",
-      "availability_1": 0,
-      "availability_2": 1,
-      "availability_3": 0
     },
     {
       "department": "Computer Science",
@@ -1746,15 +1575,6 @@
     {
       "department": "Computer Science",
       "course_prefix": "CS",
-      "class_code": "CM186",
-      "class_name": "Computational &  Systems Biology: Modeling and Simulation/strong>",
-      "availability_1": 0,
-      "availability_2": 1,
-      "availability_3": 0
-    },
-    {
-      "department": "Computer Science",
-      "course_prefix": "CS",
       "class_code": "188",
       "class_name": "Special topics in Computer Science(Effective Fall 2021, CS 188 no longer needs to be petitioned.  For topics taken prior to F2021, you still must petition to apply to elective credit)",
       "availability_1": 0,
@@ -1765,11 +1585,11 @@
 },
 {
   "_id": {
-    "$oid": "69a4df3307097747bd9ebb89"
+    "$oid": "69a4e633e15ae2581a543f3a"
   },
   "source_url": "https://www.seasoasa.ucla.edu/ee-course-term-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:52:03.665Z"
+    "$date": "2026-03-02T01:21:55.305Z"
   },
   "table_data": [
     {
@@ -2090,15 +1910,6 @@
     {
       "department": "Electrical Engineering",
       "course_prefix": "EC ENGR",
-      "class_code": "123B",
-      "class_name": "Fundamentals of Solid-State II",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
       "class_code": "128",
       "class_name": "Principles of Nanoelectronics",
       "availability_1": 0,
@@ -2139,24 +1950,6 @@
       "class_name": "Applied Numerical Computing",
       "availability_1": 1,
       "availability_2": 1,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "133B",
-      "class_name": "Simulation, Optimization, and Data Analysis",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "134",
-      "class_name": "Graph Theory in Engineering",
-      "availability_1": 0,
-      "availability_2": 0,
       "availability_3": 0
     },
     {
@@ -2216,15 +2009,6 @@
     {
       "department": "Electrical Engineering",
       "course_prefix": "EC ENGR",
-      "class_code": "149",
-      "class_name": "Foundations of Computer Vision",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
       "class_code": "M153",
       "class_name": "Introduction to Microscale and Nanoscale Manufacturing*",
       "availability_1": 0,
@@ -2234,45 +2018,9 @@
     {
       "department": "Electrical Engineering",
       "course_prefix": "EC ENGR",
-      "class_code": "162A",
-      "class_name": "Wireless Communication Links and Antennas",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
       "class_code": "163A",
       "class_name": "Introductory Microwave Circuits",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "163C",
-      "class_name": "Introduction to Microwave Systems",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "163DA",
-      "class_name": "Microwave and Wireless Design I",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "163DB",
-      "class_name": "Microwave and Wireless Design II",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     },
@@ -2297,42 +2045,6 @@
     {
       "department": "Electrical Engineering",
       "course_prefix": "EC ENGR",
-      "class_code": "170C",
-      "class_name": "Photonic Sensors and Solar Cells",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "173DA",
-      "class_name": "Photonics and Communication Design",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "173DB",
-      "class_name": "Photonics and Communication Design",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "176",
-      "class_name": "Photonics in Biomedical Applications",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
       "class_code": "180DA",
       "class_name": "Systems Design",
       "availability_1": 1,
@@ -2351,54 +2063,9 @@
     {
       "department": "Electrical Engineering",
       "course_prefix": "EC ENGR",
-      "class_code": "CM182",
-      "class_name": "Science, Technology, and Public Policy",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "183DA",
-      "class_name": "Design of Robotic Systems",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "183DB",
-      "class_name": "Design of Robotic Systems",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "M185",
-      "class_name": "Introduction to Plasma Electronics",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
       "class_code": "188.1",
       "class_name": "Special Courses in Electrical Engineering — Power Electronics",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Electrical Engineering",
-      "course_prefix": "EC ENGR",
-      "class_code": "188.2",
-      "class_name": "Special Courses in Electrical Engineering –",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     }
@@ -2406,11 +2073,11 @@
 },
 {
   "_id": {
-    "$oid": "69a4df3507097747bd9ebb8a"
+    "$oid": "69a4e635e15ae2581a543f3b"
   },
   "source_url": "https://www.seasoasa.ucla.edu/materials-science-and-engineering-course-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:52:05.695Z"
+    "$date": "2026-03-02T01:21:57.340Z"
   },
   "table_data": [
     {
@@ -2497,15 +2164,6 @@
     {
       "department": "Materials Science and Engineering",
       "course_prefix": "MAT SCI",
-      "class_code": "C112",
-      "class_name": "Cultural Materials Science II: Characterization Methods in Conservation of Materials",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
       "class_code": "120",
       "class_name": "Physics of Materials",
       "availability_1": 0,
@@ -2578,15 +2236,6 @@
     {
       "department": "Materials Science and Engineering",
       "course_prefix": "MAT SCI",
-      "class_code": "C133",
-      "class_name": "",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
       "class_code": "140A",
       "class_name": "Materials Selection and Engineering Design A",
       "availability_1": 0,
@@ -2623,15 +2272,6 @@
     {
       "department": "Materials Science and Engineering",
       "course_prefix": "MAT SCI",
-      "class_code": "143L",
-      "class_name": "Mechanical Behavior Laboratory",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
       "class_code": "150",
       "class_name": "Introduction to Polymers",
       "availability_1": 0,
@@ -2659,29 +2299,11 @@
     {
       "department": "Materials Science and Engineering",
       "course_prefix": "MAT SCI",
-      "class_code": "161",
-      "class_name": "Processing of Ceramics and Glasses",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
       "class_code": "161L",
       "class_name": "Laboratory in Ceramics",
       "availability_1": 0,
       "availability_2": 0,
       "availability_3": 1
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
-      "class_code": "162",
-      "class_name": "Electronic Materials",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
     },
     {
       "department": "Materials Science and Engineering",
@@ -2695,36 +2317,9 @@
     {
       "department": "Materials Science and Engineering",
       "course_prefix": "MAT SCI",
-      "class_code": 0,
-      "class_name": 0,
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
-      "class_code": 0,
-      "class_name": 0,
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
       "class_code": "180",
       "class_name": "Introduction to Biomaterials",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Materials Science and Engineering",
-      "course_prefix": "MAT SCI",
-      "class_code": "188",
-      "class_name": "Special Courses in Materials Science",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     }
@@ -2732,11 +2327,11 @@
 },
 {
   "_id": {
-    "$oid": "69a4df3707097747bd9ebb8b"
+    "$oid": "69a4e637e15ae2581a543f3c"
   },
   "source_url": "https://www.seasoasa.ucla.edu/mae-course-term-offerings/",
   "scraped_at": {
-    "$date": "2026-03-02T00:52:07.794Z"
+    "$date": "2026-03-02T01:21:59.430Z"
   },
   "table_data": [
     {
@@ -2850,38 +2445,11 @@
     {
       "department": "Mechanical Engineering",
       "course_prefix": "MECH&AE",
-      "class_code": "C132A",
-      "class_name": "Mass Transfer (NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
       "class_code": "133A",
       "class_name": "Engineering Thermodynamics",
       "availability_1": 0,
       "availability_2": 1,
       "availability_3": 1
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "C134",
-      "class_name": "Introduction to Bayesian Statistics for Data-Driven Science and Engineering [NOT OFFERED 2025-2026 (updated 01/27/2026)]",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "C136",
-      "class_name": "Energy and Environment(NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
     },
     {
       "department": "Mechanical Engineering",
@@ -2904,15 +2472,6 @@
     {
       "department": "Mechanical Engineering",
       "course_prefix": "MECH&AE",
-      "class_code": "CM140",
-      "class_name": "Introduction to Biomechanics(NOT OFFERED 2025-2026) updated 08/27/2025",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
       "class_code": "150A",
       "class_name": "Intermediate Fluid Mechanics",
       "availability_1": 1,
@@ -2927,24 +2486,6 @@
       "availability_1": 0,
       "availability_2": 0,
       "availability_3": 1
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "150C",
-      "class_name": "Combustion Systems(NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "C150G",
-      "class_name": "Fluid Dynamics of Biological Systems(NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
     },
     {
       "department": "Mechanical Engineering",
@@ -2976,27 +2517,9 @@
     {
       "department": "Mechanical Engineering",
       "course_prefix": "MECH&AE",
-      "class_code": "154B",
-      "class_name": "Design of Aerospace Structures (NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
       "class_code": "154S",
       "class_name": "Flight Mechanics, Stability, and Control of Aircraft",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "155",
-      "class_name": "Intermediate Dynamics(NOT OFFERED 2025-2026)",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     },
@@ -3008,24 +2531,6 @@
       "availability_1": 1,
       "availability_2": 1,
       "availability_3": 1
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "C156B",
-      "class_name": "Mechanical Design for Power Transmission (NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "157A",
-      "class_name": "Aerospace Design Laboratory(NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
     },
     {
       "department": "Mechanical Engineering",
@@ -3174,15 +2679,6 @@
     {
       "department": "Mechanical Engineering",
       "course_prefix": "MECH&AE",
-      "class_code": "169A",
-      "class_name": "Introduction to Mechanical Vibrations",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
       "class_code": "171A",
       "class_name": "Introduction to Feedback and Control Systems",
       "availability_1": 1,
@@ -3222,24 +2718,6 @@
       "class_code": "C175A",
       "class_name": "Probability and Stochastic Processes in Dynamical Systems",
       "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "181A",
-      "class_name": "Complex Analysis and Integral Transforms (NOT OFFERED 2025-2026)",
-      "availability_1": 0,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "182B",
-      "class_name": "Mathematics of Engineering(NOT OFFERED 2025-2026)",
-      "availability_1": 0,
       "availability_2": 0,
       "availability_3": 0
     },
@@ -3305,33 +2783,6 @@
       "availability_1": 0,
       "availability_2": 0,
       "availability_3": 1
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "100",
-      "class_name": "Electrical and Electronic Circuits",
-      "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "110L",
-      "class_name": "Circuit Measurements Laboratory",
-      "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
-    },
-    {
-      "department": "Mechanical Engineering",
-      "course_prefix": "MECH&AE",
-      "class_code": "104",
-      "class_name": "Science of Engineering Materials",
-      "availability_1": 1,
-      "availability_2": 0,
-      "availability_3": 0
     }
   ]
 }]

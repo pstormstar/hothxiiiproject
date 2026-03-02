@@ -144,14 +144,11 @@ def scrape_page(url, config):
 
     soup = BeautifulSoup(response.content, 'html.parser')
     
-    # 1. Find the main container
-    # Using soup.select_one() allows us to use CSS selectors (like 'div.class_name')
     container = soup.select_one(config['container'])
     if not container:
         print(f"  -> Could not find container: {config['container']}")
         return None
 
-    # 2. Find all rows within that container
     rows = container.select(config['row'])
     if len(rows) <= config['skip_headers']:
         print("  -> Not enough rows found based on configuration.")
@@ -159,16 +156,12 @@ def scrape_page(url, config):
 
     table_documents = []
 
-    # 3. Iterate through rows, skipping headers as defined in config
     for row in rows[config['skip_headers']:]:
-        # Find cells. We use a list comprehension to handle both string CSS 
-        # selectors ('div.class') and lists of tags (['th', 'td'])
         if isinstance(config['cell'], list):
             cells = row.find_all(config['cell'])
         else:
             cells = row.select(config['cell'])
             
-        # Ensure the row actually has enough columns to parse
         max_idx_needed = max(config['avail_indices'] + [config['course_idx']])
         if len(cells) > max_idx_needed:
             
@@ -179,21 +172,17 @@ def scrape_page(url, config):
                     row_dict[key] = val
 
             course_text = cells[config['course_idx']].get_text(strip=True)
-            
             course_text = course_text.replace('\xa0', ' ')
             
-            # Check if we have a valid text string with letters before trying to split
             if any(c.isalpha() for c in course_text):
                 if "course_separator" in config:
                     parts = re.split(config["course_separator"], course_text, maxsplit=1)
                     
-                    # Check if the regex actually found a match and split it
                     if len(parts) == 2:
                         raw_code = parts[0].strip()
                         row_dict["class_code"] = raw_code.split()[-1] if raw_code else ""
                         row_dict["class_name"] = parts[1].strip()
                     else:
-                        # Fallback if the regex didn't trigger
                         row_dict["class_code"] = ""
                         row_dict["class_name"] = course_text.strip()
                 else:
@@ -203,15 +192,26 @@ def scrape_page(url, config):
                 row_dict["class_code"] = 0
                 row_dict["class_name"] = 0
             
-            # Extract Availability dynamically
+            # --- NEW: Track if the course is offered in any term ---
+            is_offered = False 
+            
             for term_num, cell_idx in enumerate(config['avail_indices'], start=1):
                 cell_text = cells[cell_idx].get_text(strip=True).lower()
                 
-                # Check if 'fall', 'winter', or 'spring' appears anywhere in the cell's text
-                row_dict[f"availability_{term_num}"] = 1 if any(term in cell_text for term in ["fall", "winter", "spring"]) else 0
+                # Using the fixed availability logic here!
+                if any(term in cell_text for term in ["fall", "winter", "spring"]):
+                    row_dict[f"availability_{term_num}"] = 1
+                    is_offered = True # We found a term, flip the flag!
+                else:
+                    row_dict[f"availability_{term_num}"] = 0
 
-            print(f"    Scraped row: {row_dict}")
-            table_documents.append(row_dict)
+            # --- NEW: Only append if is_offered is True ---
+            if is_offered:
+                print(f"    Scraped row: {row_dict}")
+                table_documents.append(row_dict)
+            else:
+                # Optional: Print a skipped message so you can monitor what gets thrown out
+                print(f"    Skipped (No Availability): {row_dict.get('class_name', 'Unknown Course')}")
 
     return table_documents
 
